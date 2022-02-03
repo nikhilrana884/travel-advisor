@@ -10,6 +10,8 @@ import { getPlacesData } from './api';
 
 const App = () => {
     const [places, setPlaces] = useState([]);
+    const [coords, setCoords] = useState({});
+    const [bounds, setBounds] = useState(null);
 
     useEffect(() => {
             getPlacesData()
@@ -28,7 +30,10 @@ const App = () => {
                     <List />
                 </Grid>
                 <Grid item xs={12} md={4}>
-                    <Map />
+                    <Map
+                        setBounds={setBounds}
+                        setCoords={setCoords} 
+                    />
                 </Grid>
                 
             </Grid>
