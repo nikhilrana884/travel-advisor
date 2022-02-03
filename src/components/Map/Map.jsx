@@ -6,11 +6,9 @@ import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles.js';
 
-const Map = () => { 
+const Map = ({ coords, places, setCoords, setBounds, setChildClicked, weatherData }) => { 
     const classes = useStyles();
     const isMobile = useMediaQuery('(min-width:600px)');
-
-    const coordinates = { lat:0 ,lng:0 };
 
 
   return (
